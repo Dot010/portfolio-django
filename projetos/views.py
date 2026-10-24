@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from .models import Projeto
 
-# Create your views here.
+class ProjetoList(ListView):
+    model = Projeto
+
+class ProjetoDetail(DetailView):
+    model = Projeto
+    
