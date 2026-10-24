@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -34,10 +35,16 @@ class Projeto(Base):
     
 
 class Perfil(Base):
-    nome = models.CharField(max_length=100)
-    email = models.EmailField()
-    mensagem = models.TextField()
-    lida = models.BooleanField(default=False)
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)
+    linkedin = models.URLField(blank=True)
+    github = models.URLField(blank=True)
+
+    class Meta:
+        verbose_name_plural = "Perfis"
+
+    def __str__(self):
+        return self.usuario.username
 
 class Contato(Base):
     nome = models.CharField(max_length=100)
@@ -46,4 +53,4 @@ class Contato(Base):
     lida = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.nome} - {self-self.email}"
+           return f"{self.nome} - {self.email}"
