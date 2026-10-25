@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Jonathan Carvalho{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Início</a>
+            <a href="{% url 'projeto_list' %}">Projetos</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jonathan Carvalho</p>
+    </footer>
+</body>
+</html>
