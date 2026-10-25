@@ -1,7 +1,10 @@
-<h1>{{ object.titulo }}</h1>
+{%extends "base.html" %}
 
+    {% block titulo %}Jonathan Carvalho {% endblock %}
+
+    {% block conteudo %}
+<h1>{{ object.titulo }} | Jonathan Carvalho</h1>
 <p>{{ object.descricao }}</p>
-
 <a href="{{ object.link_github }}">Ver no GitHub</a>
-
 <a href="{% url 'projeto_list' %}">Voltar</a>
+    {% endblock %}
