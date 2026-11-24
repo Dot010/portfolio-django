@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block titulo %}Blog | Jonathan Carvalho{% endblock %}
+
+{% block conteudo %}
+    <h1>Blog</h1>
+    <ul>
+      {% for post in object_list %}
+        <li>
+          <a href="{% url 'post_detail' post.slug %}">{{ post.titulo }}</a>
+          <small>{{ post.criado_em|date:"d/m/Y" }}</small>
+        </li>
+      {% empty %}
+        <li>Nenhum post publicado ainda.</li>
+      {% endfor %}
+    </ul>
+{% endblock %}
