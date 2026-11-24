@@ -46,4 +46,4 @@ class Contato(Base):
     lida = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.nome} - {self-self.email}"
+        return f"{self.nome} - {self.email}"
