@@ -5,8 +5,8 @@
 {% block conteudo %}
     <article>
         <h1>{{ object.titulo }}</h1>
-        <small>{{ object.criado_em|date:"d/m/Y" }}</small>
+            <small>Jonathan Carvalho | {{ object.criado_em|date:"d/m/Y" }}</small>
         {{ object.corpo|linebreaks }}
     </article>
-    <a href="{% url 'post_list' %}">Voltar para o blog</a>
+      <a class="botao" href="{% url 'post_list' %}">← Voltar para o blog</a>
 {% endblock %}
