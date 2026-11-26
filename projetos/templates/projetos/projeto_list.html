@@ -1,8 +1,14 @@
-<h1>Meus Projetos</h1>
-<ul>
-  {% for projeto in object_list %}
-    <li><a href="{% url 'projeto_detail' projeto.pk %}">{{ projeto.titulo }}</a></li>
-  {% empty %}
-    <li>Nenhum projeto ainda.</li>
-  {% endfor %}
-</ul>
+{% extends "base.html" %}                                       
+
+{% block titulo %}Projetos | Jonathan Carvalho{% endblock %}       
+
+{% block conteudo %}                                              
+    <h1>Meus Projetos</h1>
+    <ul>
+      {% for projeto in object_list %}
+        <li><a href="{% url 'projeto_detail' projeto.pk %}">{{ projeto.titulo }}</a></li>
+      {% empty %}
+        <li>Nenhum projeto ainda.</li>
+      {% endfor %}
+    </ul>
+{% endblock %}                                                   
